@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/province_header"
+        layout="@layout/province_order_header"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/province_order_container"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium">
+
+        <TextView
+            android:id="@+id/province_order_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_medium"
+            android:textColor="@color/darkText"
+            android:textStyle="bold"
+            tools:text="Order: #9999"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/province_order_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/lightText"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:textSize="@dimen/text_small"
+            tools:text="07-Jan-2000"
+            app:layout_constraintTop_toBottomOf="@id/province_order_title"
+            app:layout_constraintStart_toStartOf="@id/province_order_title"/>
+
+        <TextView
+            android:id="@+id/province_order_financial_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorSecondary"
+            android:textStyle="bold"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:textAllCaps="true"
+            tools:text="PAID"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/province_order_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkText"
+            android:textStyle="bold"
+            tools:text="$9999.99"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/province_order_arrow"/>
+
+        <ImageView
+            android:id="@+id/province_order_arrow"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_keyboard_arrow_right_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65"
+            app:layout_constraintEnd_toStartOf="@id/province_order_arrow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

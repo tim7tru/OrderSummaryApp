@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Order Summary</string>
+
+    <string name="general_price_format">$%s</string>
+
+    <string name="tabs_order_province">Orders by Province</string>
+    <string name="tabs_order_year">Orders by Year</string>
+
+    <string name="province_order_item_title">Order: #%s</string>
+    <string name="province_order_item_date">%s-%s-%s</string>
+    <string name="province_order_header_count">%s Orders</string>
+</resources>
