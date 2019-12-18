@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/darkText"
             android:textStyle="bold"
-            tools:text="$9999.99"
+            tools:text="$9999.99 CAD"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/province_order_arrow"/>
@@ -79,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.65"
+            app:layout_constraintGuide_percent="0.575"
             app:layout_constraintEnd_toStartOf="@id/province_order_arrow" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

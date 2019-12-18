@@ -9,8 +9,8 @@ import kotlinx.android.synthetic.main.province_order_header.view.*
 import kotlinx.android.synthetic.main.province_order_item.view.*
 import java.util.*
 
-class ProvinceViewHolder(itemView: View,
-                         private val provinceOrderCount: SortedMap<String, Int>): RecyclerView.ViewHolder(itemView)
+class YearViewHolder(itemView: View,
+                     private val yearOrderCount: SortedMap<Int, Int>): RecyclerView.ViewHolder(itemView)
 {
     fun setDetails(item: ProvinceOrderItem, viewType: Int)
     {
@@ -20,9 +20,9 @@ class ProvinceViewHolder(itemView: View,
             {
                 itemView.province_header.visibility = View.VISIBLE
 
-                itemView.province_header.province_order_header_title.text = item.shipping_address!!.province
+                itemView.province_header.province_order_header_title.text = item.processed_year.toString()
 
-                itemView.province_header.province_order_header_count.text = CommonUtils.formatOrderCount(provinceOrderCount[item.shipping_address!!.province].toString())
+                itemView.province_header.province_order_header_count.text = CommonUtils.formatOrderCount(yearOrderCount[item.processed_year].toString())
             }
             AppConstants.ITEM_VIEW_TYPE ->
             {

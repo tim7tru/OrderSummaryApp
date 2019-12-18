@@ -13,8 +13,7 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class OrderRepository @Inject constructor(private val orderService: OrderService,
-                                          private val orderMapper: OrderMapper
-)
+                                          private val orderMapper: OrderMapper)
 {
     private var orderResponseCall: Call<Order>? = null
 

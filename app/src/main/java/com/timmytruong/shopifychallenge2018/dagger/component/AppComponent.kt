@@ -13,8 +13,4 @@ import javax.inject.Singleton
 interface AppComponent
 {
     fun inject(mainActivity: MainActivity)
-
-    fun inject(provinceFragment: ProvinceFragment)
-
-    fun inject(yearFragment: YearFragment)
 }

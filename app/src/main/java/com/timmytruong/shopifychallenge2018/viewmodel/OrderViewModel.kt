@@ -40,4 +40,24 @@ class OrderViewModel @Inject constructor(private val orderRepository: OrderRepos
     {
         return orderProvider.getProvinceOrderCount()
     }
+
+    fun getYearResponse(): MutableLiveData<ArrayList<ProvinceOrderItem>>
+    {
+        return orderYearMutableLiveData
+    }
+
+    fun setYearOrders(array: ArrayList<ProvinceOrderItem>)
+    {
+        orderProvider.setYearOrder(array)
+    }
+
+    fun getYearOrders(): ArrayList<ProvinceOrderItem>
+    {
+        return orderProvider.getYearOrder()
+    }
+
+    fun getYearOrderCount(): SortedMap<Int, Int>
+    {
+        return orderProvider.getYearOrderCount()
+    }
 }

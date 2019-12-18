@@ -2,23 +2,16 @@ package com.timmytruong.shopifychallenge2018.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.viewpager.widget.ViewPager
 import com.timmytruong.shopifychallenge2018.*
 import com.timmytruong.shopifychallenge2018.adapter.ViewPagerAdapter
 import com.timmytruong.shopifychallenge2018.dagger.component.DaggerAppComponent
 import com.timmytruong.shopifychallenge2018.fragment.ProvinceFragment
 import com.timmytruong.shopifychallenge2018.fragment.YearFragment
-import com.timmytruong.shopifychallenge2018.interfaces.ObserverCallback
-import com.timmytruong.shopifychallenge2018.mapper.OrderMapper
-import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
 import com.timmytruong.shopifychallenge2018.util.AppConstants
 import com.timmytruong.shopifychallenge2018.util.CommonUtils
 import com.timmytruong.shopifychallenge2018.viewmodel.OrderViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import java.time.Year
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity()

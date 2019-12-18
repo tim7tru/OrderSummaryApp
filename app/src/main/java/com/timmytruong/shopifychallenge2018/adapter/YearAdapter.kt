@@ -1,24 +1,23 @@
 package com.timmytruong.shopifychallenge2018.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.timmytruong.shopifychallenge2018.R
 import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
 import com.timmytruong.shopifychallenge2018.util.AppConstants
-import com.timmytruong.shopifychallenge2018.util.ui.ProvinceViewHolder
+import com.timmytruong.shopifychallenge2018.util.ui.YearViewHolder
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ProvinceAdapter(private val context: Context,
-                      private val orderItems: ArrayList<ProvinceOrderItem>,
-                      private val provinceOrderCount: SortedMap<String, Int>): RecyclerView.Adapter<ProvinceViewHolder>()
+class YearAdapter(private val context: Context,
+                  private val orderItems: ArrayList<ProvinceOrderItem>,
+                  private val yearOrderCount: SortedMap<Int, Int>): RecyclerView.Adapter<YearViewHolder>()
 {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProvinceViewHolder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): YearViewHolder
     {
-        return ProvinceViewHolder(LayoutInflater.from(context).inflate(R.layout.province_order_item, parent, false), provinceOrderCount)
+        return YearViewHolder(LayoutInflater.from(context).inflate(R.layout.province_order_item, parent, false), yearOrderCount)
     }
 
     override fun getItemCount(): Int
@@ -33,7 +32,7 @@ class ProvinceAdapter(private val context: Context,
         }
     }
 
-    override fun onBindViewHolder(holder: ProvinceViewHolder, position: Int)
+    override fun onBindViewHolder(holder: YearViewHolder, position: Int)
     {
         if (!orderItems.isNullOrEmpty())
         {
@@ -62,7 +61,7 @@ class ProvinceAdapter(private val context: Context,
 
         headerArray.add(headerElement)
 
-        provinceOrderCount.forEach {
+        yearOrderCount.forEach {
             headerElement += it.value
 
             headerArray.add(headerElement)

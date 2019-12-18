@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Order Summary</string>
 
-    <string name="general_price_format">$%s</string>
+    <string name="general_price_format">$%s CAD</string>
 
     <string name="tabs_order_province">Orders by Province</string>
     <string name="tabs_order_year">Orders by Year</string>

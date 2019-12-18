@@ -16,8 +16,6 @@ object AppConstants
 
     const val API_TOKEN_QUERY = "c32313df0d0ef512ca64d5b336a0d7c6"
 
-    const val PAID_VALUE = "paid"
-
     const val HEADER_VIEW_TYPE = 0
 
     const val ITEM_VIEW_TYPE = 1
