@@ -19,4 +19,6 @@ object AppConstants
     const val HEADER_VIEW_TYPE = 0
 
     const val ITEM_VIEW_TYPE = 1
+
+    const val ITEM_INTENT_KEY = "item"
 }

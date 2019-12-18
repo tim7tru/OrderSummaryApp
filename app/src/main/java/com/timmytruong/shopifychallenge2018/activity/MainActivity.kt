@@ -1,5 +1,6 @@
 package com.timmytruong.shopifychallenge2018.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +9,8 @@ import com.timmytruong.shopifychallenge2018.adapter.ViewPagerAdapter
 import com.timmytruong.shopifychallenge2018.dagger.component.DaggerAppComponent
 import com.timmytruong.shopifychallenge2018.fragment.ProvinceFragment
 import com.timmytruong.shopifychallenge2018.fragment.YearFragment
+import com.timmytruong.shopifychallenge2018.interfaces.ItemClickedListener
+import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
 import com.timmytruong.shopifychallenge2018.util.AppConstants
 import com.timmytruong.shopifychallenge2018.util.CommonUtils
 import com.timmytruong.shopifychallenge2018.viewmodel.OrderViewModel
@@ -27,6 +30,19 @@ class MainActivity : AppCompatActivity()
     private val tabsFragment: ArrayList<Fragment> = arrayListOf()
 
     private val tabsTitles: ArrayList<String> = arrayListOf()
+
+    private val itemClickedListener =
+        object: ItemClickedListener
+        {
+            override fun openDetailsActivity(item: ProvinceOrderItem)
+            {
+                val intent = Intent(this@MainActivity, OrderDetailsActivity::class.java)
+
+                intent.putExtra(AppConstants.ITEM_INTENT_KEY, item)
+
+                startActivity(intent)
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -60,9 +76,9 @@ class MainActivity : AppCompatActivity()
 
     private fun loadFragments()
     {
-        val provinceFragment = ProvinceFragment(orderViewModel)
+        val provinceFragment = ProvinceFragment(orderViewModel, itemClickedListener)
 
-        val yearFragment = YearFragment(orderViewModel)
+        val yearFragment = YearFragment(orderViewModel, itemClickedListener)
 
         tabsFragment.add(provinceFragment)
 

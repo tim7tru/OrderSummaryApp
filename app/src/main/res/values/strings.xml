@@ -9,4 +9,17 @@
     <string name="province_order_item_title">Order: #%s</string>
     <string name="province_order_item_date">%s-%s-%s</string>
     <string name="province_order_header_count">%s Orders</string>
+
+    <string name="details_id">Transaction ID</string>
+    <string name="details_firstname">First Name</string>
+    <string name="details_lastname">Last Name</string>
+    <string name="details_processed">Processed On</string>
+    <string name="details_address">Shipping Address</string>
+    <string name="details_city">City</string>
+    <string name="details_finstat">Financial Status</string>
+    <string name="details_province">Province</string>
+    <string name="details_email">Email</string>
+    <string name="details_phone">Phone</string>
+    <string name="details_country">Country</string>
+
 </resources>

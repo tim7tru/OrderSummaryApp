@@ -5,19 +5,20 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.timmytruong.shopifychallenge2018.R
+import com.timmytruong.shopifychallenge2018.interfaces.ItemClickedListener
 import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
 import com.timmytruong.shopifychallenge2018.util.AppConstants
 import com.timmytruong.shopifychallenge2018.util.ui.YearViewHolder
 import java.util.*
-import kotlin.collections.ArrayList
 
 class YearAdapter(private val context: Context,
                   private val orderItems: ArrayList<ProvinceOrderItem>,
-                  private val yearOrderCount: SortedMap<Int, Int>): RecyclerView.Adapter<YearViewHolder>()
+                  private val yearOrderCount: SortedMap<Int, Int>,
+                  private val itemClickedListener: ItemClickedListener): RecyclerView.Adapter<YearViewHolder>()
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): YearViewHolder
     {
-        return YearViewHolder(LayoutInflater.from(context).inflate(R.layout.province_order_item, parent, false), yearOrderCount)
+        return YearViewHolder(LayoutInflater.from(context).inflate(R.layout.province_order_item, parent, false), yearOrderCount, itemClickedListener)
     }
 
     override fun getItemCount(): Int

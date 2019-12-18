@@ -22,11 +22,363 @@
         android:textSize="@dimen/text_large"
         android:textColor="@color/darkText"
         android:textStyle="bold"
-        tools:text="Order #9999"
+        android:text="@string/province_order_item_title"
         app:layout_constraintTop_toTopOf="@id/details_close"
         app:layout_constraintBottom_toBottomOf="@id/details_close"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33333333333"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_sixth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66666666666"/>
+
+    <LinearLayout
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/details_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_third">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/details_id"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xxsmall"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/details_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="12345678910"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xsmall"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/processed_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/first_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_third">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/details_processed"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xxsmall"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/details_processedon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="07-Jan-2000"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xsmall"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/details_close"
+        app:layout_constraintStart_toEndOf="@id/guideline_third"
+        app:layout_constraintEnd_toStartOf="@id/guideline_sixth">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/details_firstname"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="@color/darkText"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_xxsmall"/>
+
+        <TextView
+            android:id="@+id/details_firstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="Timmy"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xsmall"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/details_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_sixth">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/details_lastname"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xxsmall"/>
+
+        <TextView
+            android:id="@+id/details_lastname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="Truong"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xsmall"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/financial_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_third">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/details_finstat"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xxsmall"/>
+
+        <TextView
+            android:id="@+id/details_financialstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            tools:text="Paid"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/text_xsmall"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/first_name"
+        app:layout_constraintStart_toEndOf="@id/guideline_third"
+        app:layout_constraintEnd_toStartOf="@id/guideline_sixth">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/details_address"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xxsmall"/>
+
+        <TextView
+            android:id="@+id/details_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="9 Surrey Drive"
+            android:layout_gravity="center"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xsmall"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/last_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_sixth">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/details_city"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xxsmall"/>
+
+        <TextView
+            android:id="@+id/details_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="Toronto"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xsmall"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/province"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/address"
+        app:layout_constraintStart_toEndOf="@id/guideline_third"
+        app:layout_constraintEnd_toStartOf="@id/guideline_sixth">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/details_province"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xxsmall"/>
+
+        <TextView
+            android:id="@+id/details_province"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="Ontario"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xsmall"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_sixth">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/details_country"
+            android:textAllCaps="true"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xxsmall"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/details_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAllCaps="true"
+            tools:text="US"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xsmall"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/province"
+        app:layout_constraintStart_toEndOf="@id/guideline_third"
+        app:layout_constraintEnd_toStartOf="@id/guideline_sixth">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/details_email"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xxsmall"/>
+
+        <TextView
+            android:id="@+id/details_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="timmytruong@gmail.com"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xsmall"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/country"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_sixth">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/details_phone"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xxsmall"/>
+
+        <TextView
+            android:id="@+id/details_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="(123)-456-7890  x722"
+            android:textColor="@color/darkText"
+            android:textSize="@dimen/text_xsmall"/>
+    </LinearLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,11 +9,13 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.timmytruong.shopifychallenge2018.R
 import com.timmytruong.shopifychallenge2018.adapter.YearAdapter
+import com.timmytruong.shopifychallenge2018.interfaces.ItemClickedListener
 import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
 import com.timmytruong.shopifychallenge2018.viewmodel.OrderViewModel
 import kotlinx.android.synthetic.main.fragment_year.*
 
-class YearFragment(private val orderViewModel: OrderViewModel): Fragment()
+class YearFragment(private val orderViewModel: OrderViewModel,
+                   private val itemClickedListener: ItemClickedListener): Fragment()
 {
     private lateinit var yearAdapter: YearAdapter
 
@@ -34,7 +36,7 @@ class YearFragment(private val orderViewModel: OrderViewModel): Fragment()
 
         orderViewModel.getYearResponse().observe(this, yearObserver)
 
-        yearAdapter = YearAdapter(activity!!, orderViewModel.getYearOrders(), orderViewModel.getYearOrderCount())
+        yearAdapter = YearAdapter(activity!!, orderViewModel.getYearOrders(), orderViewModel.getYearOrderCount(), itemClickedListener)
 
         year_recycler.layoutManager = LinearLayoutManager(activity!!)
 

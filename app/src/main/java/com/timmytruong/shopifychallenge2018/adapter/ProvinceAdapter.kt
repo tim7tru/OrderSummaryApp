@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.timmytruong.shopifychallenge2018.R
+import com.timmytruong.shopifychallenge2018.interfaces.ItemClickedListener
 import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
 import com.timmytruong.shopifychallenge2018.util.AppConstants
 import com.timmytruong.shopifychallenge2018.util.ui.ProvinceViewHolder
@@ -14,11 +15,12 @@ import kotlin.collections.ArrayList
 
 class ProvinceAdapter(private val context: Context,
                       private val orderItems: ArrayList<ProvinceOrderItem>,
-                      private val provinceOrderCount: SortedMap<String, Int>): RecyclerView.Adapter<ProvinceViewHolder>()
+                      private val provinceOrderCount: SortedMap<String, Int>,
+                      private val itemClickedListener: ItemClickedListener): RecyclerView.Adapter<ProvinceViewHolder>()
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProvinceViewHolder
     {
-        return ProvinceViewHolder(LayoutInflater.from(context).inflate(R.layout.province_order_item, parent, false), provinceOrderCount)
+        return ProvinceViewHolder(LayoutInflater.from(context).inflate(R.layout.province_order_item, parent, false), provinceOrderCount, itemClickedListener)
     }
 
     override fun getItemCount(): Int

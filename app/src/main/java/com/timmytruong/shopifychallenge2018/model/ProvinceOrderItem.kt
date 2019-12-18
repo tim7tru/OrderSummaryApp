@@ -1,7 +1,11 @@
 package com.timmytruong.shopifychallenge2018.model
 
+import java.io.Serializable
+
 data class ProvinceOrderItem(var number: Int,
+                             var id: Long,
                              var processed_at: String,
+                             var email: String,
                              var processed_hour: Int,
                              var processed_minute: Int,
                              var processed_second: Int,
@@ -13,7 +17,7 @@ data class ProvinceOrderItem(var number: Int,
                              var total_price: String,
                              var total_price_usd: String,
                              var line_items: ArrayList<LineItem>,
-                             var shipping_address: ShippingAddress? = ShippingAddress())
+                             var shipping_address: ShippingAddress? = ShippingAddress()): Serializable
 {
     fun getProvince(): String
     {
