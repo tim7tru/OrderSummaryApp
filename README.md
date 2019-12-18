@@ -8,7 +8,8 @@ You're a successful Shopify merchant! Your orders have grown to a point that you
 Orders by Province: Number of orders from each province
 
 Each province will be its own subheading. So, “Orders by Province” will be the heading and “x number of orders from Alaska”, for example, will be the subheading. The number of subheadings depends on how many different provinces the orders were shipped to.
-Orders by Year: Number of orders created in 2017
+
+Orders by Year: Number of orders created
 
 You can access the list of orders, and their properties, via the Shopify Orders List REST API. Reading through the properties’ descriptions will help you determine how to categorize orders in each category. It is possible for a single order to be in more than one category.
 
