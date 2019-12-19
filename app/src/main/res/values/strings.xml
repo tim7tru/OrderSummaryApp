@@ -2,6 +2,7 @@
     <string name="app_name">Order Summary</string>
 
     <string name="general_price_format">$%s CAD</string>
+    <string name="general_price_format_no_currency">$%s</string>
 
     <string name="tabs_order_province">Orders by Province</string>
     <string name="tabs_order_year">Orders by Year</string>
@@ -21,5 +22,9 @@
     <string name="details_email">Email</string>
     <string name="details_phone">Phone</string>
     <string name="details_country">Country</string>
-
+    <string name="details_quantity">Qty.</string>
+    <string name="details_description">Description</string>
+    <string name="details_price">Unit Price</string>
+    <string name="details_total">Total Price: %s CAD</string>
+    <string name="details_total_usd">%s USD</string>
 </resources>

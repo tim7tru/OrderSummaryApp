@@ -1,7 +1,7 @@
 package com.timmytruong.shopifychallenge2018.mapper
 
 import com.timmytruong.shopifychallenge2018.model.Order
-import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
+import com.timmytruong.shopifychallenge2018.model.OrderItem
 import com.timmytruong.shopifychallenge2018.util.CommonUtils
 import com.timmytruong.shopifychallenge2018.util.enums.Months
 import java.time.YearMonth
@@ -11,7 +11,7 @@ import kotlin.collections.ArrayList
 
 class OrderMapper
 {
-    fun processProvinceResponse(result: Order): ArrayList<ProvinceOrderItem>
+    fun processProvinceResponse(result: Order): ArrayList<OrderItem>
     {
         result.orders.forEach {
             val split= it.processed_at.split('T')
@@ -31,12 +31,12 @@ class OrderMapper
             it.processed_year = year.toInt()
         }
 
-        Collections.sort(result.orders, Comparator.comparing(ProvinceOrderItem::getProvince))
+        Collections.sort(result.orders, Comparator.comparing(OrderItem::getProvince))
 
         return ArrayList(result.orders)
     }
 
-    fun processYearResponse(result: Order): ArrayList<ProvinceOrderItem>
+    fun processYearResponse(result: Order): ArrayList<OrderItem>
     {
         result.orders.forEach {
             val split = it.processed_at.split('T')
@@ -50,19 +50,19 @@ class OrderMapper
         }
         val orders = ArrayList(result.orders)
 
-        Collections.sort(orders, Comparator.comparing(ProvinceOrderItem::processed_year)
-                .thenComparing(ProvinceOrderItem::processed_month)
-                .thenComparing(ProvinceOrderItem::processed_day)
-                .thenComparing(ProvinceOrderItem::processed_hour)
-                .thenComparing(ProvinceOrderItem::processed_minute)
-                .thenComparing(ProvinceOrderItem::processed_second))
+        Collections.sort(orders, Comparator.comparing(OrderItem::processed_year)
+                .thenComparing(OrderItem::processed_month)
+                .thenComparing(OrderItem::processed_day)
+                .thenComparing(OrderItem::processed_hour)
+                .thenComparing(OrderItem::processed_minute)
+                .thenComparing(OrderItem::processed_second))
 
         orders.reverse()
 
         return orders
     }
 
-    private fun getUTC(item: ProvinceOrderItem, time: String, offset: String)
+    private fun getUTC(item: OrderItem, time: String, offset: String)
     {
 
         val offsetOperator = offset.substring(0)
@@ -98,7 +98,7 @@ class OrderMapper
         }
     }
 
-    private fun correctTime(item: ProvinceOrderItem)
+    private fun correctTime(item: OrderItem)
     {
         if (item.processed_minute > 59)
         {
@@ -131,7 +131,7 @@ class OrderMapper
         }
     }
 
-    private fun correctDate(item: ProvinceOrderItem)
+    private fun correctDate(item: OrderItem)
     {
         val yearMonth = YearMonth.of(item.processed_year, item.processed_month)
 

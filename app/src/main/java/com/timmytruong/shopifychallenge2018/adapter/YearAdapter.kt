@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.timmytruong.shopifychallenge2018.R
 import com.timmytruong.shopifychallenge2018.interfaces.ItemClickedListener
-import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
+import com.timmytruong.shopifychallenge2018.model.OrderItem
 import com.timmytruong.shopifychallenge2018.util.AppConstants
 import com.timmytruong.shopifychallenge2018.util.ui.YearViewHolder
 import java.util.*
 
 class YearAdapter(private val context: Context,
-                  private val orderItems: ArrayList<ProvinceOrderItem>,
+                  private val orderItems: ArrayList<OrderItem>,
                   private val yearOrderCount: SortedMap<Int, Int>,
                   private val itemClickedListener: ItemClickedListener): RecyclerView.Adapter<YearViewHolder>()
 {

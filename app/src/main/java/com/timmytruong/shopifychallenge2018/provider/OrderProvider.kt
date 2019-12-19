@@ -1,29 +1,29 @@
 package com.timmytruong.shopifychallenge2018.provider
 
-import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
+import com.timmytruong.shopifychallenge2018.model.OrderItem
 import java.util.*
 import javax.inject.Inject
 import kotlin.collections.ArrayList
 
 class OrderProvider @Inject constructor()
 {
-    private val ordersByProvince: ArrayList<ProvinceOrderItem> = arrayListOf()
+    private val ordersBy: ArrayList<OrderItem> = arrayListOf()
 
-    private val ordersByYear: ArrayList<ProvinceOrderItem> = arrayListOf()
+    private val ordersByYear: ArrayList<OrderItem> = arrayListOf()
 
     private val provinceOrderCount: SortedMap<String, Int> = sortedMapOf()
 
     private val yearOrderCount: TreeMap<Int, Int> = TreeMap(Collections.reverseOrder())
-    fun setProvinceOrder(array: ArrayList<ProvinceOrderItem>)
+    fun setProvinceOrder(array: ArrayList<OrderItem>)
     {
-        ordersByProvince.addAll(array)
+        ordersBy.addAll(array)
 
         setProvinceOrderCount()
     }
 
     private fun setProvinceOrderCount()
     {
-        ordersByProvince.forEach {
+        ordersBy.forEach {
             if (provinceOrderCount.keys.contains(it.shipping_address!!.province))
             {
                 provinceOrderCount[it.shipping_address!!.province] = provinceOrderCount[it.shipping_address!!.province]!!.plus(1)
@@ -40,12 +40,12 @@ class OrderProvider @Inject constructor()
         return provinceOrderCount
     }
 
-    fun getProvinceOrder(): ArrayList<ProvinceOrderItem>
+    fun getProvinceOrder(): ArrayList<OrderItem>
     {
-        return ordersByProvince
+        return ordersBy
     }
 
-    fun setYearOrder(array: ArrayList<ProvinceOrderItem>)
+    fun setYearOrder(array: ArrayList<OrderItem>)
     {
         ordersByYear.addAll(array)
 
@@ -66,7 +66,7 @@ class OrderProvider @Inject constructor()
         }
     }
 
-    fun getYearOrder(): ArrayList<ProvinceOrderItem>
+    fun getYearOrder(): ArrayList<OrderItem>
     {
         return ordersByYear
     }

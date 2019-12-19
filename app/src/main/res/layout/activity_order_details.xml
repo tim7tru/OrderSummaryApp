@@ -59,7 +59,7 @@
             android:textAllCaps="true"
             android:textStyle="bold"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xxsmall"
+            android:textSize="@dimen/text_xsmall"
             android:layout_gravity="center"/>
 
         <TextView
@@ -69,7 +69,7 @@
             android:layout_gravity="center"
             tools:text="12345678910"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xsmall"/>
+            android:textSize="@dimen/text_small"/>
     </LinearLayout>
 
 
@@ -90,7 +90,7 @@
             android:textAllCaps="true"
             android:textStyle="bold"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xxsmall"
+            android:textSize="@dimen/text_xsmall"
             android:layout_gravity="center"/>
 
         <TextView
@@ -100,7 +100,7 @@
             android:layout_gravity="center"
             tools:text="07-Jan-2000"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xsmall"/>
+            android:textSize="@dimen/text_small"/>
     </LinearLayout>
 
     <LinearLayout
@@ -121,7 +121,7 @@
             android:textStyle="bold"
             android:textColor="@color/darkText"
             android:layout_gravity="center"
-            android:textSize="@dimen/text_xxsmall"/>
+            android:textSize="@dimen/text_xsmall"/>
 
         <TextView
             android:id="@+id/details_firstname"
@@ -130,7 +130,7 @@
             android:layout_gravity="center"
             tools:text="Timmy"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xsmall"/>
+            android:textSize="@dimen/text_small"/>
     </LinearLayout>
 
     <LinearLayout
@@ -152,7 +152,7 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xxsmall"/>
+            android:textSize="@dimen/text_xsmall"/>
 
         <TextView
             android:id="@+id/details_lastname"
@@ -161,7 +161,7 @@
             android:layout_gravity="center"
             tools:text="Truong"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xsmall"/>
+            android:textSize="@dimen/text_small"/>
     </LinearLayout>
 
     <LinearLayout
@@ -182,7 +182,7 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xxsmall"/>
+            android:textSize="@dimen/text_xsmall"/>
 
         <TextView
             android:id="@+id/details_financialstatus"
@@ -193,7 +193,7 @@
             android:textStyle="bold"
             tools:text="Paid"
             android:textColor="@color/colorSecondary"
-            android:textSize="@dimen/text_xsmall"/>
+            android:textSize="@dimen/text_small"/>
     </LinearLayout>
 
     <LinearLayout
@@ -214,7 +214,7 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xxsmall"/>
+            android:textSize="@dimen/text_xsmall"/>
 
         <TextView
             android:id="@+id/details_address"
@@ -223,7 +223,7 @@
             tools:text="9 Surrey Drive"
             android:layout_gravity="center"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xsmall"/>
+            android:textSize="@dimen/text_small"/>
     </LinearLayout>
 
     <LinearLayout
@@ -244,7 +244,7 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xxsmall"/>
+            android:textSize="@dimen/text_xsmall"/>
 
         <TextView
             android:id="@+id/details_city"
@@ -253,7 +253,7 @@
             android:layout_gravity="center"
             tools:text="Toronto"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xsmall"/>
+            android:textSize="@dimen/text_small"/>
     </LinearLayout>
 
 
@@ -275,7 +275,7 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xxsmall"/>
+            android:textSize="@dimen/text_xsmall"/>
 
         <TextView
             android:id="@+id/details_province"
@@ -284,7 +284,7 @@
             android:layout_gravity="center"
             tools:text="Ontario"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xsmall"/>
+            android:textSize="@dimen/text_small"/>
     </LinearLayout>
 
     <LinearLayout
@@ -304,7 +304,7 @@
             android:text="@string/details_country"
             android:textAllCaps="true"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xxsmall"
+            android:textSize="@dimen/text_xsmall"
             android:textStyle="bold" />
 
         <TextView
@@ -315,8 +315,15 @@
             android:textAllCaps="true"
             tools:text="US"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xsmall"/>
+            android:textSize="@dimen/text_small"/>
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_half"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5"/>
 
     <LinearLayout
         android:id="@+id/email"
@@ -325,8 +332,9 @@
         android:orientation="vertical"
         android:layout_marginTop="@dimen/margin_small"
         app:layout_constraintTop_toBottomOf="@id/province"
-        app:layout_constraintStart_toEndOf="@id/guideline_third"
-        app:layout_constraintEnd_toStartOf="@id/guideline_sixth">
+        app:layout_constraintEnd_toEndOf="@id/guideline_half"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
@@ -336,7 +344,7 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xxsmall"/>
+            android:textSize="@dimen/text_xsmall"/>
 
         <TextView
             android:id="@+id/details_email"
@@ -345,7 +353,7 @@
             android:layout_gravity="center"
             tools:text="timmytruong@gmail.com"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xsmall"/>
+            android:textSize="@dimen/text_small"/>
     </LinearLayout>
 
     <LinearLayout
@@ -355,8 +363,9 @@
         android:orientation="vertical"
         android:layout_marginTop="@dimen/margin_small"
         app:layout_constraintTop_toBottomOf="@id/country"
+        app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guideline_sixth">
+        app:layout_constraintStart_toStartOf="@id/guideline_half">
 
         <TextView
             android:layout_width="wrap_content"
@@ -366,7 +375,7 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xxsmall"/>
+            android:textSize="@dimen/text_xsmall"/>
 
         <TextView
             android:id="@+id/details_phone"
@@ -375,10 +384,81 @@
             android:layout_gravity="center"
             tools:text="(123)-456-7890  x722"
             android:textColor="@color/darkText"
-            android:textSize="@dimen/text_xsmall"/>
+            android:textSize="@dimen/text_small"/>
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkText"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/margin_xsmall"
+        android:textSize="@dimen/text_xsmall"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/details_quantity"
+        app:layout_constraintStart_toStartOf="@id/line_recycler"
+        app:layout_constraintTop_toBottomOf="@id/email"/>
 
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkText"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_xsmall"
+        android:text="@string/details_description"
+        app:layout_constraintStart_toStartOf="@id/guideline_half"
+        app:layout_constraintEnd_toEndOf="@id/guideline_half"
+        app:layout_constraintBottom_toTopOf="@id/line_recycler"/>
+
+    <TextView
+        android:id="@+id/price_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkText"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_xsmall"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:text="@string/details_price"
+        app:layout_constraintEnd_toEndOf="@id/line_recycler"
+        app:layout_constraintBottom_toTopOf="@id/line_recycler"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/line_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/qty"
+        app:layout_constraintBottom_toTopOf="@id/total_price"/>
+
+    <TextView
+        android:id="@+id/total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkText"
+        android:textStyle="bold"
+        tools:text="Total: $9999.99 CAD"
+        android:text="@string/details_total"
+        app:layout_constraintBottom_toTopOf="@id/total_price_usd"
+        app:layout_constraintEnd_toEndOf="@id/total_price_usd"/>
+
+    <TextView
+        android:id="@+id/total_price_usd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:textColor="@color/darkText"
+        android:textStyle="bold"
+        tools:text="$9999.99 USD"
+        android:text="@string/details_total_usd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

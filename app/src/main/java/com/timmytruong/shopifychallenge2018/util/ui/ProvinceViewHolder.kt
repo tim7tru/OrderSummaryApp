@@ -3,7 +3,7 @@ package com.timmytruong.shopifychallenge2018.util.ui
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.timmytruong.shopifychallenge2018.interfaces.ItemClickedListener
-import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
+import com.timmytruong.shopifychallenge2018.model.OrderItem
 import com.timmytruong.shopifychallenge2018.util.AppConstants
 import com.timmytruong.shopifychallenge2018.util.CommonUtils
 import kotlinx.android.synthetic.main.province_order_header.view.*
@@ -15,7 +15,7 @@ class ProvinceViewHolder(itemView: View,
                          private val itemClickedListener: ItemClickedListener): RecyclerView.ViewHolder(itemView)
 {
 
-    fun setDetails(item: ProvinceOrderItem, viewType: Int)
+    fun setDetails(item: OrderItem, viewType: Int)
     {
         itemView.setOnClickListener {
             itemClickedListener.openDetailsActivity(item)

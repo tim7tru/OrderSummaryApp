@@ -10,7 +10,7 @@ import com.timmytruong.shopifychallenge2018.dagger.component.DaggerAppComponent
 import com.timmytruong.shopifychallenge2018.fragment.ProvinceFragment
 import com.timmytruong.shopifychallenge2018.fragment.YearFragment
 import com.timmytruong.shopifychallenge2018.interfaces.ItemClickedListener
-import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
+import com.timmytruong.shopifychallenge2018.model.OrderItem
 import com.timmytruong.shopifychallenge2018.util.AppConstants
 import com.timmytruong.shopifychallenge2018.util.CommonUtils
 import com.timmytruong.shopifychallenge2018.viewmodel.OrderViewModel
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity()
     private val itemClickedListener =
         object: ItemClickedListener
         {
-            override fun openDetailsActivity(item: ProvinceOrderItem)
+            override fun openDetailsActivity(item: OrderItem)
             {
                 val intent = Intent(this@MainActivity, OrderDetailsActivity::class.java)
 

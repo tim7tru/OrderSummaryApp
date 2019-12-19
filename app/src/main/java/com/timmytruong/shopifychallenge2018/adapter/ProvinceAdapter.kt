@@ -1,20 +1,19 @@
 package com.timmytruong.shopifychallenge2018.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.timmytruong.shopifychallenge2018.R
 import com.timmytruong.shopifychallenge2018.interfaces.ItemClickedListener
-import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
+import com.timmytruong.shopifychallenge2018.model.OrderItem
 import com.timmytruong.shopifychallenge2018.util.AppConstants
 import com.timmytruong.shopifychallenge2018.util.ui.ProvinceViewHolder
 import java.util.*
 import kotlin.collections.ArrayList
 
 class ProvinceAdapter(private val context: Context,
-                      private val orderItems: ArrayList<ProvinceOrderItem>,
+                      private val orderItems: ArrayList<OrderItem>,
                       private val provinceOrderCount: SortedMap<String, Int>,
                       private val itemClickedListener: ItemClickedListener): RecyclerView.Adapter<ProvinceViewHolder>()
 {

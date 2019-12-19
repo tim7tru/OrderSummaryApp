@@ -1,11 +1,10 @@
 package com.timmytruong.shopifychallenge2018.repository
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.timmytruong.shopifychallenge2018.interfaces.OrderService
 import com.timmytruong.shopifychallenge2018.mapper.OrderMapper
 import com.timmytruong.shopifychallenge2018.model.Order
-import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
+import com.timmytruong.shopifychallenge2018.model.OrderItem
 import com.timmytruong.shopifychallenge2018.util.AppConstants
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,7 +16,7 @@ class OrderRepository @Inject constructor(private val orderService: OrderService
 {
     private var orderResponseCall: Call<Order>? = null
 
-    fun getOrderResponse(orderProvinceMutableResponse: MutableLiveData<ArrayList<ProvinceOrderItem>>, orderYearMutableResponse: MutableLiveData<ArrayList<ProvinceOrderItem>>)
+    fun getOrderResponse(orderMutableResponse: MutableLiveData<ArrayList<OrderItem>>, orderYearMutableResponse: MutableLiveData<ArrayList<OrderItem>>)
     {
         orderResponseCall = orderService.getOrders(AppConstants.API_PAGE_QUERY, AppConstants.API_TOKEN_QUERY)
 
@@ -28,7 +27,7 @@ class OrderRepository @Inject constructor(private val orderService: OrderService
                 {
                     if (response.isSuccessful && response.body() != null)
                     {
-                        orderProvinceMutableResponse.value = orderMapper.processProvinceResponse(response.body()!!)
+                        orderMutableResponse.value = orderMapper.processProvinceResponse(response.body()!!)
                         orderYearMutableResponse.value = orderMapper.processYearResponse(response.body()!!)
                     }
                 }

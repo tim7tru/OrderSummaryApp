@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.timmytruong.shopifychallenge2018.R
 import com.timmytruong.shopifychallenge2018.adapter.YearAdapter
 import com.timmytruong.shopifychallenge2018.interfaces.ItemClickedListener
-import com.timmytruong.shopifychallenge2018.model.ProvinceOrderItem
+import com.timmytruong.shopifychallenge2018.model.OrderItem
 import com.timmytruong.shopifychallenge2018.viewmodel.OrderViewModel
 import kotlinx.android.synthetic.main.fragment_year.*
 
@@ -19,7 +19,7 @@ class YearFragment(private val orderViewModel: OrderViewModel,
 {
     private lateinit var yearAdapter: YearAdapter
 
-    private val yearObserver: Observer<ArrayList<ProvinceOrderItem>> = Observer {
+    private val yearObserver: Observer<ArrayList<OrderItem>> = Observer {
         orderViewModel.setYearOrders(it)
 
         yearAdapter.notifyDataSetChanged()
