@@ -1,6 +1,4 @@
-# ShopifyWinter2018Challenge
-
-Shopify's Winter 2018 Mobile Intern Challenge:
+# Order Summary
 
 Problem:
 You're a successful Shopify merchant! Your orders have grown to a point that you can’t keep track of them on your fingers anymore. Create a mobile app that displays an Order Summary Page. Your summary will show the following 2 categories:
