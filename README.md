@@ -1,5 +1,11 @@
 # Order Summary
 
+Libraries Used:
+[Dagger2](https://github.com/google/dagger)
+[Material Design](https://github.com/material-components/material-components-android)
+[OKHttp](https://square.github.io/okhttp/)
+[RetroFit2](https://square.github.io/retrofit/)
+
 Problem:
 You're a successful Shopify merchant! Your orders have grown to a point that you can’t keep track of them on your fingers anymore. Create a mobile app that displays an Order Summary Page. Your summary will show the following 2 categories:
 
